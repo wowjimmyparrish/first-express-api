@@ -9,8 +9,9 @@ const friendsController = require('../controllers/friends.controller');
 // Create a router for friends
 const friendsRouter = express.Router();
 
+// Middleware
 friendsRouter.use((req, res, next) => {
-	console.log('Time: ', Date.now());
+	console.log('ip address:', req.ip);
 	next();
 });
 // Routes for friends
