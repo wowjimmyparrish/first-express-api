@@ -8,8 +8,12 @@ const path = require('path');
 // /folder/files.jpg \folder\files.jpg
 
 function getMessages(req, res) {
-	// This line of code uses the sendFile method to send the grimmace.png file as a response to the client. path.join(__dirname, '..', 'public', 'grimmace.png') is used to specify the path to the grimmace.png file.
-	res.sendFile(path.join(__dirname, '..', 'public', 'images', 'grimmace.png'));
+	// This function will return a list of messages in an unordered list by rendering the messages view.
+	res.render('messages', {
+		title: 'Messages to my Friends',
+		friend: 'Hamburglar',
+	});
+	// res.sendFile(path.join(__dirname, '..', 'public', 'images', 'grimmace.png'));
 }
 
 function postMessages(req, res) {
